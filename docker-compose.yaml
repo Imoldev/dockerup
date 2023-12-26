@@ -12,9 +12,14 @@ services:
       - ./www:/var/www
 
   php-fpm:
-    build: ./docker/php
+    build: ./docker/php/php-fpm
     volumes:
       - ./www:/var/www
+
+  cli:
+    build: ./docker/php/php-cli
+    volumes:
+      - ./www:/var/www    
 
   db:
     image: mysql:8
