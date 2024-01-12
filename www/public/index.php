@@ -1,13 +1,18 @@
 <?php
-declare(strict_types=1);
+$myArr = [];
 
-//var_dump(false && true || true ); 
-//var_dump( false AND true || true);
+print_r($myArr);
 
-include __DIR__ . '/../lib/utils.php';
+$myArr[] = 7832;
+$myArr[] = 783;
+$myArr[] = 7;
 
-var_dump(sum(5, 2));
+$myArr['hhh'] = 7887987;
 
-$res = require __DIR__ . '/../config.php';
-var_dump($res);
+print_r($myArr);
 
+foreach ($myArr as $someVal) {
+    //var_dump($someKey);
+    var_dump($someVal);
+
+}
