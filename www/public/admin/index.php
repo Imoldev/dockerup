@@ -22,10 +22,7 @@ echo '<pre>';
     print_r($result);
 echo '</pre>';
 
-
-
-require __DIR__ . '/../../templates/contacts_listvar_dump($stmt->fetch());
-.tmpl.php';
+require __DIR__ . '/../../templates/contacts_list.tmpl.php';
 
 
 
