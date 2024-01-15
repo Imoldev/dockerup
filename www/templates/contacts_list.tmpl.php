@@ -17,13 +17,17 @@
         <tr>
             <td>id</td>
             <td>name</td>
+            <td>email</td>
             <td>phone</td>
+            <td></td>
         </tr>
-        <?php foreach ($contactList as $id => $data) { ?>
+        <?php foreach ($contactList as $index => $data) { ?>
             <tr>
-                <td><?= $id ?></td>
+                <td><?= $data['id'] ?></td>
                 <td><?= $data['name'] ?></td>
+                <td><?= $data['email'] ?></td>
                 <td><?= $data['phone'] ?></td>
+                <td> <a href="/delete_contact.php?contact=<?= $data['id'] ?>">Remove</a> </td>
             </tr>
         <?php } ?>
     </table>

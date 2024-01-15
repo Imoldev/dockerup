@@ -1,2 +1,3 @@
 /docker/dbdata
 /vendor/
+/www/public/upload

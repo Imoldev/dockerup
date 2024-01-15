@@ -1,16 +1,19 @@
 <?php
 
-$numPages = 10;
-$activePage = (int) $_GET['page'];
+$dbh = require __DIR__ . '/../../db/pdo.php';
 
-$contactList = [
-    31131 => ['name' => 'John1', 'phone' => '7897987987'],
-    2424342 => ['name' => 'John2', 'phone' => '7897987987'],
-    242 => ['name' => 'John3', 'phone' => '7897987987'],
-    2424 => ['name' => 'John4', 'phone' => '7897987987'],
-    2424 => ['name' => 'John5', 'phone' => '7897987987'],
-    242 => ['name' => 'John6', 'phone' => '7897987987'],
-];
+$numPages = 10;
+if(!isset($_GET['page'])) {
+    $activePage = 1;
+} else {
+    $activePage = (int) $_GET['page'];
+}
+
+
+$sth = $dbh->prepare('SELECT * FROM contacts ORDER BY created_on ASC');
+
+$sth->execute();
+$contactList = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 require __DIR__ . '/../../templates/contacts_list.tmpl.php';
 
@@ -34,6 +37,7 @@ $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 echo '<pre>';
     print_r($result);
 echo '</pre>';
+*/
 
 
 

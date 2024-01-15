@@ -4,5 +4,7 @@ return [
     'dbUser' => 'student',
     'dbPassword' => 'student',
     'dbHost' => 'db',
-    'dbPort' => 3306
+    'dbPort' => 3306,
+    'adminLogin' => 'admin',
+    'adminPassword' => 'admin',
 ];
